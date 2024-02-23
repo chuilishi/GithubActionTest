@@ -15,5 +15,6 @@ jobs:
           python-version: "3.10"
           cache: "pip"
       - run: |
+           ls
            python main.py
         
