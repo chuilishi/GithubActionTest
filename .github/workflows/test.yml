@@ -8,7 +8,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4 # 拉取代码
-
       - name: Set up Python 3.10
         uses: actions/setup-python@v5
         with:
@@ -16,4 +15,9 @@ jobs:
       - run: |
            ls
            python main.py
-        
+
+      - name: Cache cache folder
+        uses: actions/cache@v2
+        with:
+          path: cache
+          key: ${{ runner.os }}-cache
